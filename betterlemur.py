@@ -40,7 +40,7 @@ file = open('/home/pi/ScrollingLemurs/endangered.txt', 'r')
 lines = file.readlines()
 
 out = []
-for line in lines[5:]:
+for line in lines:
 
     image = Image.open('lemur-photos/'+random.choice(os.listdir("lemur-photos/")))
     img_width, img_height = image.size
@@ -112,7 +112,7 @@ for line in lines[5:]:
             length = graphics.DrawText(offscreen_canvas, font, pos, 20, textColor, namestr)
             pos -= 1
 
-            time.sleep(0.03)
+            time.sleep(0.01)
             offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
 
     matrix.Clear()
