@@ -83,7 +83,7 @@ for line in lines[5:]:
     while (pos + length > 0):
 
         offscreen_canvas.Clear()
-        length = graphics.DrawText(offscreen_canvas, font, pos, 22, textColor, lemur)
+        length = graphics.DrawText(offscreen_canvas, font, pos, 20, textColor, lemur)
         pos -= 1
 
         time.sleep(0.03)
@@ -96,7 +96,7 @@ for line in lines[5:]:
         while (pos + length > 0):
 
             offscreen_canvas.Clear()
-            length = graphics.DrawText(offscreen_canvas, font, pos, 15, textColor, namestr)
+            length = graphics.DrawText(offscreen_canvas, font, pos, 20, textColor, namestr)
             pos -= 1
 
             time.sleep(0.03)
