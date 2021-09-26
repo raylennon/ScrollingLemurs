@@ -49,8 +49,8 @@ for line in lines:
 
     pos = offscreen_canvas.width
 
-    length = 1e99 # overkill? lol
-
+    length = 100 # overkill? lol
+    print(pos+length)
     while (pos + length < 0):
 
         offscreen_canvas.Clear()
