@@ -60,15 +60,15 @@ for line in lines[5:]:
     names = line.split(",")[2:]
 
     if status=='Endangered':
-        ecolor = graphics.color(255, 121, 18)
+        ecolor = graphics.Color(255, 121, 18)
     elif status=='Critically Endangered':
-        ecolor = graphics.color(255, 0, 0)
+        ecolor = graphics.Color(255, 0, 0)
     elif status=='Vulnerable':
-        ecolor = graphics.color(255, 255, 0)
+        ecolor = graphics.Color(255, 255, 0)
     elif status == 'Data Deficient':
-        ecolor = graphics.color(255, 18, 247)
+        ecolor = graphics.Color(255, 18, 247)
     else:
-        ecolor = graphics.color(0, 255, 0)
+        ecolor = graphics.Color(0, 255, 0)
 
     donames = False
 
