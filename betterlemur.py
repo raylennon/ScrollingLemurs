@@ -54,14 +54,14 @@ for line in lines:
     while True:
 
         offscreen_canvas.Clear()
-        length = graphics.DrawText(offscreen_canvas, font, pos, 10, textColor, lemur)
+        length = graphics.DrawText(offscreen_canvas, font, pos, 15, textColor, lemur)
         pos -= 1
 
         if (pos + length < 0):
             pos = offscreen_canvas.width
 
         print(pos+length)
-        time.sleep(0.05)
+        time.sleep(0.03)
         offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
     
     matrix.Clear()
