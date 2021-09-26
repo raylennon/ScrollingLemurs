@@ -39,9 +39,22 @@ pos = offscreen_canvas.width
 file = open('/home/pi/ScrollingLemurs/endangered.txt', 'r')
 lines = file.readlines()
 
-
 out = []
 for line in lines:
+
+    image = Image.open('lemur-photos/'+random.choice(os.listdir("/lemur-photos/")))
+    img_width, img_height = image.size
+
+    xpos=-2
+    while xpos<=img_width-64:
+        xpos += 1
+        offscreen_canvas.SetImage(image, -xpos)
+        offscreen_canvas.SetImage(image, -xpos + img_width)
+
+        offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
+        time.sleep(0.03)
+
+
     lemur = line.split(",")[0]
     print(lemur)
 
