@@ -58,7 +58,11 @@ for line in lines[5:]:
     lemur = line.split(",")[0]
     status = line.split(",")[1]
     names = line.split(",")[2:]
+
+    donames = False
+
     if len(names):
+        donames = True
         names = names[0].split('/')
         
         namestr = f"The Duke Lemur Center has {len(names)} {lemur}s! Their names are "
@@ -85,7 +89,7 @@ for line in lines[5:]:
         time.sleep(0.03)
         offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
     
-    if len(names):
+    if donames:
         length=0
         while (pos + length > 0):
 
