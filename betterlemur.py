@@ -51,14 +51,11 @@ for line in lines:
 
     length = -100 # overkill? lol
     #print(pos+length)
-    while True:
+    while (pos + length > 0):
 
         offscreen_canvas.Clear()
         length = graphics.DrawText(offscreen_canvas, font, pos, 15, textColor, lemur)
         pos -= 1
-
-        if (pos + length < 0):
-            pos = offscreen_canvas.width
 
         print(pos+length)
         time.sleep(0.03)
