@@ -88,7 +88,8 @@ for line in lines[5:]:
 
     pos = offscreen_canvas.width
 
-    length = 0 # overkill? lol
+    length = 0
+    elength = 0
 
     #print(pos+length)
     while (pos + length +elength > 0):
