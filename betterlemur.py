@@ -91,6 +91,8 @@ for line in lines[5:]:
     
     if donames:
         length=0
+        pos = offscreen_canvas.width
+
         while (pos + length > 0):
 
             offscreen_canvas.Clear()
