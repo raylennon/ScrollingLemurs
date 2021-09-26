@@ -42,7 +42,7 @@ lines = file.readlines()
 out = []
 for line in lines:
 
-    image = Image.open('lemur-photos/'+random.choice(os.listdir("/lemur-photos/")))
+    image = Image.open('lemur-photos/'+random.choice(os.listdir("lemur-photos/")))
     img_width, img_height = image.size
 
     xpos=-2
