@@ -63,7 +63,7 @@ for line in lines[5:]:
         
         namestr = f"The Duke Lemur Center has {len(names)} {lemur}s! Their names are "
         for i in range(len(names)-1):
-            namestr+= name
+            namestr+= names[i]
             namestr+= ", "
         if len(names):
             namestr += "and "
