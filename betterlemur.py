@@ -13,6 +13,7 @@ from rgbmatrix import graphics
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 import time
 
+delay = 0.01
 
 #import getlemurdata
 
@@ -52,7 +53,7 @@ for line in lines:
         offscreen_canvas.SetImage(image, -xpos + img_width)
 
         offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
-        time.sleep(0.03)
+        time.sleep(delay)
 
 
     lemur = line.split(",")[0] + ": "
@@ -99,7 +100,7 @@ for line in lines:
         elength = graphics.DrawText(offscreen_canvas, font, pos+length, 20, ecolor, status)
         pos -= 1
 
-        time.sleep(0.03)
+        time.sleep(delay)
         offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
     
     if donames:
@@ -112,7 +113,7 @@ for line in lines:
             length = graphics.DrawText(offscreen_canvas, font, pos, 20, textColor, namestr)
             pos -= 1
 
-            time.sleep(0.01)
+            time.sleep(delay)
             offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
 
     matrix.Clear()
