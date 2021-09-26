@@ -14,7 +14,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 import time
 
 
-import getlemurdata
+#import getlemurdata
 
 options = RGBMatrixOptions()
 options.rows = 32
@@ -43,6 +43,8 @@ lines = file.readlines()
 out = []
 for line in lines:
     lemur = line.split(",")[0]
+    print(lemur)
+
     status = line.split(",")[1]
 
     pos = offscreen_canvas.width
