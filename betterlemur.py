@@ -63,9 +63,10 @@ for line in lines[5:]:
     for i in range(len(names)-1):
         namestr+= name
         namestr+= ", "
-    namestr += "and "
-    namestr += names[-1]
-    namestr += "."
+    if len(names):
+        namestr += "and "
+        namestr += names[-1]
+        namestr += "."
     
 
     pos = offscreen_canvas.width
