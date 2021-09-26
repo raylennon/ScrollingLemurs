@@ -55,8 +55,8 @@ for line in lines[5:]:
         time.sleep(0.03)
 
 
-    lemur = line.split(",")[0]
-    status = line.split(",")[1]
+    lemur = line.split(",")[0] + ": "
+    status = line.split(",")[1][:-1]
     names = line.split(",")[2:]
 
     if status=='Endangered':
