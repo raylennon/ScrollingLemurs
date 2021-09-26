@@ -40,7 +40,7 @@ file = open('/home/pi/ScrollingLemurs/endangered.txt', 'r')
 lines = file.readlines()
 
 out = []
-for line in lines:
+for line in lines[5:]:
 
     image = Image.open('lemur-photos/'+random.choice(os.listdir("lemur-photos/")))
     img_width, img_height = image.size
@@ -56,22 +56,41 @@ for line in lines:
 
 
     lemur = line.split(",")[0]
-    print(lemur)
-
     status = line.split(",")[1]
+    names = line.split(",")[2:]
+    
+    namestr = f"The Duke Lemur Center has {len(names)} {lemur}s! Their names are "
+    for i in range(len(names)-1):
+        namestr+= name
+        namestr+= ", "
+    namestr += "and "
+    namestr += names[-1]
+    namestr += "."
+    
 
     pos = offscreen_canvas.width
 
     length = 0 # overkill? lol
+
     #print(pos+length)
-    while (pos + length > 0):
+    while (pos + length + > 0):
 
         offscreen_canvas.Clear()
         length = graphics.DrawText(offscreen_canvas, font, pos, 15, textColor, lemur)
         pos -= 1
 
-        print(pos+length)
         time.sleep(0.03)
         offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
     
+    if len(names):
+        length=0
+        while (pos + length + > 0):
+
+            offscreen_canvas.Clear()
+            length = graphics.DrawText(offscreen_canvas, font, pos, 15, textColor, namestr)
+            pos -= 1
+
+            time.sleep(0.03)
+            offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
+
     matrix.Clear()
