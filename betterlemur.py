@@ -73,7 +73,7 @@ for line in lines[5:]:
     length = 0 # overkill? lol
 
     #print(pos+length)
-    while (pos + length + > 0):
+    while (pos + length > 0):
 
         offscreen_canvas.Clear()
         length = graphics.DrawText(offscreen_canvas, font, pos, 15, textColor, lemur)
