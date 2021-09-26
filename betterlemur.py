@@ -57,16 +57,18 @@ for line in lines[5:]:
 
     lemur = line.split(",")[0]
     status = line.split(",")[1]
-    names = line.split(",")[2:][0].split('/')
-    
-    namestr = f"The Duke Lemur Center has {len(names)} {lemur}s! Their names are "
-    for i in range(len(names)-1):
-        namestr+= name
-        namestr+= ", "
+    names = line.split(",")[2:]
     if len(names):
-        namestr += "and "
-        namestr += names[-1]
-        namestr += "."
+        names = names[0].split('/')
+        
+        namestr = f"The Duke Lemur Center has {len(names)} {lemur}s! Their names are "
+        for i in range(len(names)-1):
+            namestr+= name
+            namestr+= ", "
+        if len(names):
+            namestr += "and "
+            namestr += names[-1]
+            namestr += "."
     
 
     pos = offscreen_canvas.width
