@@ -33,7 +33,7 @@ offscreen_canvas = matrix.CreateFrameCanvas()
 font = graphics.Font()
 font.LoadFont("fonts/10x20.bdf")
 
-textColor = graphics.Color(255, 255, 0)
+textColor = graphics.Color(255, 255, 255)
 pos = offscreen_canvas.width
 
 file = open('/home/pi/ScrollingLemurs/endangered.txt', 'r')
@@ -59,6 +59,17 @@ for line in lines[5:]:
     status = line.split(",")[1]
     names = line.split(",")[2:]
 
+    if status=='Endangered':
+        ecolor = graphics.color(255, 121, 18)
+    elif status=='Critically Endangered':
+        ecolor = graphics.color(255, 0, 0)
+    elif status=='Vulnerable':
+        ecolor = graphics.color(255, 255, 0)
+    elif status == 'Data Deficient':
+        ecolor = graphics.color(255, 18, 247)
+    else:
+        ecolor = graphics.color(0, 255, 0)
+
     donames = False
 
     if len(names):
@@ -80,10 +91,11 @@ for line in lines[5:]:
     length = 0 # overkill? lol
 
     #print(pos+length)
-    while (pos + length > 0):
+    while (pos + length +elength > 0):
 
         offscreen_canvas.Clear()
         length = graphics.DrawText(offscreen_canvas, font, pos, 20, textColor, lemur)
+        elength = graphics.DrawText(offscreen_canvas, font, pos+length, 20, ecolor, status)
         pos -= 1
 
         time.sleep(0.03)
