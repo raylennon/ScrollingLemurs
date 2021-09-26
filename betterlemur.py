@@ -57,7 +57,7 @@ for line in lines[5:]:
 
     lemur = line.split(",")[0]
     status = line.split(",")[1]
-    names = line.split(",")[2:]
+    names = line.split(",")[2:].split('/')
     
     namestr = f"The Duke Lemur Center has {len(names)} {lemur}s! Their names are "
     for i in range(len(names)-1):
