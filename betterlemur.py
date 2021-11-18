@@ -15,7 +15,7 @@ import time
 
 delay = 0.01
 
-#import getlemurdata
+import getlemurdata
 
 options = RGBMatrixOptions()
 options.rows = 32
