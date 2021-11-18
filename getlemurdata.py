@@ -24,7 +24,8 @@ for table in soup.find_all('table', class_='wikitable sortable')[0:3]:
 
 
 
-url="https://lemur.duke.edu/wordpress/wp-content/uploads/2019/07/DLC_ColonyList_02Jul2019.xlsx"
+#url="https://lemur.duke.edu/wordpress/wp-content/uploads/2019/07/DLC_ColonyList_02Jul2019.xlsx"
+url="https://lemur.duke.edu/wordpress/wp-content/uploads/2021/07/DLC_ColonyList_01Jul21.xlsx"
 r=requests.get(url, allow_redirects=True)
 
 open(url.split('/')[-1], 'wb').write(r.content)
@@ -42,6 +43,8 @@ for i in range(len(A)):
 			current.append(values[4])
 	print(current)
 	names.append(current)
+
+
 with open('endangered.txt', 'w') as file:
 	for i in range(len(A)):
 		file.write(A[i]+ ","+ B[i])
